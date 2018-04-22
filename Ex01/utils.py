@@ -23,7 +23,7 @@ def getaffinity(X,target):
 		# Computation of perplexity
 		perp = 2.0**(-(np.exp(logp)*logp/np.log(2)).sum(axis=1))
 
-		if k % 25 == 0: print('%3d %.3f %.3f'%(k,perp.mean(),target))
+		# if k % 25 == 0: print('%3d %.3f %.3f'%(k,perp.mean(),target))
 
 		sqsigma *= 1.0+5.0/(k+5.0)*np.sign(target-perp)
 
@@ -39,17 +39,17 @@ def getaffinity(X,target):
 def get_data(mode=1):
 
 	if(mode==1):
-		print "Loading digits"
+		print ("Loading digits")
 		from sklearn.datasets import load_digits
 		D=load_digits()
 
 	if(mode==2):
-		print "Loading boston housing"
+		print ("Loading boston housing")
 		from sklearn.datasets import load_boston
 		D=load_boston()
 
 	if(mode==3):
-		print "Loading iris"
+		print ("Loading iris")
 		from sklearn.datasets import load_iris
 		D=load_iris()
 	  
